@@ -18,7 +18,7 @@ WHERE idDogadjaj=@idD;
 IF @pom<=0
 BEGIN
 	ROLLBACK
-	print('Neuspešno');
+	print('NeuspeÅ¡no');
 END
 ELSE
 BEGIN
@@ -27,14 +27,14 @@ BEGIN
 		INSERT INTO IZVESTAJ(idUgovor,idDogadjaj,datum,ukupnaOdsteta)
 		VALUES(@idU,@idD,GETDATE(),@pom);
 		commit
-		print('Uspešno');
+		print('UspeÅ¡no');
 	END
 	ELSE
 	BEGIN
 		INSERT INTO IZVESTAJ(idUgovor,idDogadjaj,datum,ukupnaOdsteta)
 		VALUES(@idU,@idD,GETDATE(),@pom2);
 		commit
-		print('Uspešno');
+		print('UspeÅ¡no');
 	END
 END
 END
@@ -50,14 +50,14 @@ WHERE idKlijent=@idk and statusUgovora='Aktivan';
 IF @pom>0
 BEGIN
 	ROLLBACK
-	print('Neuspešno');
+	print('NeuspeÅ¡no');
 END
 ELSE
 BEGIN
 	DELETE FROM KLIJENT
 	WHERE idKlijent=@idk;
 	commit
-	print('Uspešno');
+	print('UspeÅ¡no');
 END
 END
 go
@@ -72,14 +72,14 @@ WHERE idAgent=@ida and statusPonuda='Aktivan';
 IF @pom>0
 BEGIN
 	ROLLBACK
-	print('Neuspešno');
+	print('NeuspeÅ¡no');
 END
 ELSE
 BEGIN
 	DELETE FROM AGENT
 	WHERE idAgent=@ida;
 	commit
-	print('Uspešno');
+	print('UspeÅ¡no');
 END
 END
 go
@@ -94,14 +94,14 @@ WHERE idPonuda=@idp and statusUgovora='Aktivan';
 IF @pom>0
 BEGIN
 	ROLLBACK
-	print('Neuspešno');
+	print('NeuspeÅ¡no');
 END
 ELSE
 BEGIN
 	DELETE FROM PONUDA
 	WHERE idPonuda=@idp;
 	commit
-	print('Uspešno');
+	print('UspeÅ¡no');
 END
 END
 go
