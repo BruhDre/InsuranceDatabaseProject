@@ -10,7 +10,7 @@ namespace Zavrsni
 {
     internal class Database
     {
-        string connectionString = "Data Source=DESKTOP-FHII93Q\\MSSQLSERVER01;Initial Catalog=OSIGURANJE;Integrated Security=True";
+        string connectionString = "insert connection string here";
 
         public DataSet izvrsi(string sql_upit, string naziv)
         {
